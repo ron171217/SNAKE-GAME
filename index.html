@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>🐍 SNAKE GAME</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">High Score:</span>
+                    <span id="highScore" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div id="gameOver" class="game-over hidden">
+                <h2>Game Over!</h2>
+                <p>Your Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="btn">Play Again</button>
+            </div>
+            <div id="startScreen" class="start-screen">
+                <h2>Welcome to Snake Game!</h2>
+                <p>Use Arrow Keys or WASD to control the snake</p>
+                <button id="startBtn" class="btn">Start Game</button>
+            </div>
+        </div>
+        
+        <div class="controls-info">
+            <div class="control-item">
+                <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>
+                <span>Arrow Keys</span>
+            </div>
+            <div class="control-item">
+                <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+                <span>WASD</span>
+            </div>
+            <div class="control-item">
+                <kbd>Space</kbd>
+                <span>Pause/Resume</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
