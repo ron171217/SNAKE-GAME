@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Snake</h1>
+        <p class="app__tagline">
+          Use arrow keys (or swipe) to guide the snake. Eat fruit, avoid the walls and your own tail.
+        </p>
+      </header>
+
+      <section class="scoreboard" aria-live="polite">
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Score</span>
+          <span id="score" class="scoreboard__value">0</span>
+        </div>
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">High Score</span>
+          <span id="high-score" class="scoreboard__value">0</span>
+        </div>
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Speed</span>
+          <span id="speed" class="scoreboard__value">1×</span>
+        </div>
+      </section>
+
+      <section class="board-wrapper">
+        <canvas
+          id="game-board"
+          class="board"
+          width="480"
+          height="480"
+          role="img"
+          aria-label="Snake game board"
+        ></canvas>
+        <div id="overlay" class="overlay" hidden>
+          <p id="overlay-message" class="overlay__message"></p>
+          <button id="restart-button" class="button button--primary">Play again</button>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div class="controls__group" role="group" aria-label="Game controls">
+          <button id="start-button" class="button button--primary">Start</button>
+          <button id="pause-button" class="button button--ghost" disabled>Pause</button>
+          <button id="reset-button" class="button button--ghost">Reset</button>
+        </div>
+        <div class="controls__group controls__group--pad" role="group" aria-label="Directional controls">
+          <button class="pad__button pad__button--up" data-direction="up" aria-label="Move up">↑</button>
+          <div class="pad__row">
+            <button class="pad__button pad__button--left" data-direction="left" aria-label="Move left">←</button>
+            <button class="pad__button pad__button--center" data-direction="pause" aria-label="Pause or resume">⏸</button>
+            <button class="pad__button pad__button--right" data-direction="right" aria-label="Move right">→</button>
+          </div>
+          <button class="pad__button pad__button--down" data-direction="down" aria-label="Move down">↓</button>
+        </div>
+      </section>
+
+      <section class="instructions">
+        <h2>How to play</h2>
+        <ul>
+          <li>Press the arrow keys or WASD to move the snake.</li>
+          <li>Use the on-screen buttons or swipe on touch devices.</li>
+          <li>Collect fruit to grow longer and increase your score.</li>
+          <li>Each fruit speeds the game up slightly—stay sharp!</li>
+          <li>Colliding with the walls or your tail ends the game.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
